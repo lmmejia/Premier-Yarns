@@ -1,0 +1,18 @@
+<% if notice.present? %>
+  <p style="color: green"><%= notice %></p>
+<% end %>
+
+<% content_for :title, "Cartitems" %>
+
+<h1>Cartitems</h1>
+
+<div id="cartitems">
+  <% @cartitems.each do |cartitem| %>
+    <%= render cartitem %>
+    <p>
+      <%= link_to "Show this cartitem", cartitem %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New cartitem", new_cartitem_path %>

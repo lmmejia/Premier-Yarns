@@ -1,0 +1,13 @@
+<% if notice %>
+  <p style="color: green"><%= notice %></p>
+<% end %>
+
+<%= render @cart %>
+
+<% @cart.cartitems.each do |item| %>
+    <p><%= item.product.name %></p>
+    <p><%= item.product.price %></p>
+    <p><%= item.quantity %></p>
+<% end %>
+
+<%= @cart.total_price %>

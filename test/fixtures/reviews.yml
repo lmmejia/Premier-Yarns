@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rating: 5
+  comment: Great yarn for beginners.
+  user: one
+  product: one
+
+two:
+  rating: 4
+  comment: Soft and easy to use.
+  user: two
+  product: two

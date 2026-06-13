@@ -1,0 +1,12 @@
+<% content_for :title, "Editing cartitem" %>
+
+<h1>Editing cartitem</h1>
+
+<%= render "form", cartitem: @cartitem %>
+
+<br>
+
+<div>
+  <%= link_to "Show this cartitem", @cartitem %> |
+  <%= link_to "Back to cartitems", cartitems_path %>
+</div>

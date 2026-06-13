@@ -1,0 +1,25 @@
+<h1>Login</h1>
+
+<% if flash[:notice] %>
+  <p style="color: red"><%= flash[:notice] %></p>
+<% end %>
+
+<%= form_with url: access_authenticate_path do |form| %>
+  <div>
+    <%= form.label :userid, "User ID" %>
+    <%= form.text_field :userid, required: true, autocomplete: "username" %>
+  </div>
+
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password, required: true, autocomplete: "current-password" %>
+  </div>
+
+  <div>
+    <%= form.submit "Log in" %>
+  </div>
+<% end %>
+
+<p>
+  Need an account? <%= link_to "Sign up", access_signup_path %>
+</p>

@@ -1,0 +1,36 @@
+<% if notice.present? %>
+  <p style="color: green"><%= notice %></p>
+<% end %>
+<% content_for :title, "Products" %>
+
+<h1>Products</h1>
+
+<% if @search.present? %>
+  <p>Search results for "<%= @search %>"</p>
+<% end %>
+
+<% if @products.empty? %>
+  <p>No products found.</p>
+<% end %>
+
+<div id="products">
+  <% @products.each do |product| %>
+    <div class="product-card">
+      <div>
+        <%= image_tag(product.image_url, width: 200) %>
+      </div>
+      <h2><%= product.name %></h2>
+      <p><%= product.price %></p>
+
+      <p class="product-card-actions">
+        <%= link_to "Show this product", product %>
+      </p>
+    </div>
+  <% end %>
+</div>
+
+<% if admin? %>
+  <p>
+    <%= link_to "New product", new_product_path %>
+  </p>
+<% end %>

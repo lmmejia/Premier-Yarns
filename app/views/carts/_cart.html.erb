@@ -1,0 +1,21 @@
+<div id="<%= dom_id cart %>">
+  <h3>Your Cart</h3>
+
+  <% if notice %>
+    <p style="color: green"><%= notice %></p>
+  <% end %>
+
+  <% if cart.cartitems.any? %>
+    <ul>
+      <% cart.cartitems.each do |item| %>
+        <li><%= item.quantity %> &times; <%= item.product.name %></li>
+      <% end %>
+    </ul>
+
+    <p>Total Price: <%= number_to_currency(cart.total_price) %></p>
+
+    <%= button_to "Checkout", new_order_path, method: :get %>
+  <% else %>
+    <p>Your cart is empty.</p>
+  <% end %>
+</div>

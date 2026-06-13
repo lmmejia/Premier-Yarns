@@ -1,0 +1,12 @@
+<% if notice %>
+  <p style="color: green"><%= notice %></p>
+<% end %>
+
+<%= render @cartitem %>
+
+<% @cart.cartitems.each do |item| %>
+  <li>
+    <%= item.quantity %> &times; <%= item.product.name %>
+  </li>
+<% end %>
+ 

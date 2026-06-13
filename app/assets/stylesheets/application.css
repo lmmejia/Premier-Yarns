@@ -1,0 +1,385 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+:root {
+    color-scheme: light;
+    --page-bg: #f7f6f4;
+    --panel-bg: #fafafa;
+    --panel-border: #f7f4f1;
+    --text: #2d261f;
+    --muted: #6f6257;
+    --accent: #b5291f;
+    --accent-dark: #811010;
+    --shadow: 0 12px 28px rgba(255, 255, 255, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: var(--text);
+}
+
+body a {
+    color: var(--accent-dark);
+    text-decoration: none;
+}
+
+body a:hover {
+    text-decoration: underline;
+}
+
+#banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: white;
+    color: #fff8ef;
+    box-shadow: var(--shadow);
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: var(--text);
+    font-weight: 600;
+}
+
+#nav span {
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.nav-search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-search input[type="search"] {
+    width: min(220px, 40vw);
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--panel-border);
+    border-radius: 999px;
+}
+
+.nav-search input[type="submit"] {
+    padding: 0.45rem 0.9rem;
+}
+
+#banner img {
+    height: 5rem;
+    object-fit: cover;
+    padding: 0.25rem;
+}
+
+
+
+#columns {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+    width: min(1200px, calc(100% - 2rem));
+    margin: 1.5rem auto 2rem;
+}
+
+#side ul {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+#side li {
+    margin-bottom: 0.35rem;
+}
+
+#side h3 {
+    margin: 0 0 0.75rem;
+    color: var(--text);
+}
+
+#side p {
+    margin: 0.75rem 0 0;
+}
+
+#side .button_to {
+    margin-top: 1rem;
+}
+
+#side .button_to form {
+    margin: 0;
+}
+
+#side .button_to button {
+    width: 100%;
+}
+
+#main form div,
+#main .button_to {
+    margin-bottom: 0.75rem;
+}
+
+#main input[type="text"],
+#main input[type="email"],
+#main input[type="password"],
+#main input[type="file"],
+#main select,
+#main textarea {
+    display: block;
+    width: min(100%, 320px);
+    margin-top: 0.25rem;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+}
+
+#reviews {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--panel-border);
+}
+
+.product-detail > div {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.product-detail > div:first-child {
+    margin-bottom: 1.5rem;
+}
+
+.product-detail strong {
+    display: inline-block;
+    margin-bottom: 0.25rem;
+}
+
+.product-show > p,
+.product-show > .button_to,
+.product-show-links {
+    margin: 0 0 1.25rem;
+}
+
+.product-show > .button_to {
+    margin-top: 0.5rem;
+}
+
+.product-show-links .button_to {
+    margin-top: 0.75rem;
+}
+
+#reviews h2 {
+    margin-bottom: 0.75rem;
+}
+
+.review-card {
+    background: #fff;
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.review-card p {
+    margin: 0.35rem 0;
+}
+
+.form-errors {
+    color: #8a1f1f;
+    margin-bottom: 1rem;
+}
+
+#side,
+#main {
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+#side {
+    min-height: 220px;
+    padding: 1.25rem;
+    color: var(--muted);
+}
+
+#main {
+    padding: 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    line-height: 1.15;
+}
+
+p[style*="color: green"] {
+    display: block;
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    background: #eef7ea;
+    color: #295c1d;
+    border: 1px solid #cfe4c8;
+}
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+    align-items: stretch;
+}
+
+@media (min-width: 1024px) {
+    #products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1023px) {
+    #products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    #products {
+        grid-template-columns: 1fr;
+    }
+}
+
+#products>div,
+#products [id^="product_"] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    height: 100%;
+    background: #fff;
+    border: 1px solid var(--panel-border);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(61, 42, 18, 0.06);
+}
+
+#products>div>div:first-child {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+#products img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: 0;
+    border-radius: 12px;
+}
+
+#products h2 {
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+#products p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+#products .button_to {
+    margin-top: auto;
+}
+
+#products .product-card-actions {
+    margin-top: auto;
+}
+
+#products .product-card-actions a {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 0.7rem 1rem;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#products .product-card-actions a:hover {
+    background: var(--accent-dark);
+    text-decoration: none;
+}
+
+#products .button_to form {
+    margin: 0;
+}
+
+#products .button_to button {
+    width: 100%;
+}
+
+button,
+input[type="submit"],
+.button_to button {
+    border: 0;
+    border-radius: 999px;
+    padding: 0.7rem 1rem;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.button_to button:hover {
+    background: var(--accent-dark);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--panel-border);
+    text-align: left;
+}
+
+@media (max-width: 800px) {
+    #columns {
+        grid-template-columns: 1fr;
+        width: min(100%, calc(100% - 1rem));
+        margin-top: 1rem;
+    }
+
+    #banner {
+        flex-wrap: wrap;
+    }
+
+    #banner::after {
+        margin-left: 0;
+        width: 100%;
+    }
+}

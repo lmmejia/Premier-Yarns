@@ -1,0 +1,20 @@
+<% if notice.present? %>
+  <p style="color: green"><%= notice %></p>
+<% end %>
+
+<% content_for :title, "Orders" %>
+
+<h1><%= admin? ? "All Orders" : "My Orders" %></h1>
+
+<div id="orders">
+  <% @orders.each do |order| %>
+    <%= render order %>
+    <p>
+      <%= link_to "Show this order", order %>
+    </p>
+  <% end %>
+</div>
+
+<% if @orders.empty? %>
+  <p>You have not placed any orders yet.</p>
+<% end %>

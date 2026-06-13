@@ -1,0 +1,6 @@
+<h1>Edit Review</h1>
+<h2><%= @review.product.name %></h2>
+
+<%= render "form", product: @review.product, review: @review %>
+
+<p><%= link_to "Back to product", @review.product %></p>

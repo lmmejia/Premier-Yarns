@@ -1,0 +1,27 @@
+<% form_url = review.persisted? ? review_path(review) : product_reviews_path(product) %>
+<%= form_with(model: review, url: form_url) do |form| %>
+  <% if review.errors.any? %>
+    <div class="form-errors">
+      <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+      <ul>
+        <% review.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :rating, "Rating (1-5)" %>
+    <%= form.select :rating, (1..5).to_a, { prompt: "Select a rating" }, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :comment %>
+    <%= form.textarea :comment, required: true %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,45 @@
+<% if notice.present? %>
+  <p style="color: green"><%= notice %></p>
+<% end %>
+
+<div class="product-show">
+  <%= render @product %>
+
+  <p>
+    <strong>Average rating:</strong>
+    <% if @product.reviews.any? %>
+      <%= @product.average_rating %> / 5 (<%= pluralize(@product.reviews.count, "review") %>)
+    <% else %>
+      No reviews yet
+    <% end %>
+  </p>
+
+  <%= button_to "Add to Cart", cartitems_path(product_id: @product.id) %>
+
+  <div class="product-show-links">
+    <% if admin? %>
+      <%= link_to "Edit this product", edit_product_path(@product) %> |
+    <% end %>
+    <%= link_to "Back to products", products_path %>
+
+    <% if admin? %>
+      <%= button_to "Destroy this product", @product, method: :delete %>
+    <% end %>
+  </div>
+</div>
+
+<section id="reviews">
+  <h2>Reviews</h2>
+
+  <% if logged_in? %>
+    <p><%= link_to "Write a review", new_product_review_path(@product), data: { turbo: false } %></p>
+  <% else %>
+    <p><%= link_to "Log in to write a review", access_login_path %></p>
+  <% end %>
+
+  <% if @product.reviews.any? %>
+    <%= render @product.reviews.includes(:user) %>
+  <% else %>
+    <p>No reviews yet. Be the first to review this product.</p>
+  <% end %>
+</section>
