@@ -125,6 +125,18 @@ Review
 
 Open [http://localhost:3000](http://localhost:3000) in the browser
 
+Admin: 
+User: admin
+Password: password
+
+Demo:
+User: demo
+Password: password
+
+Demo2
+User: demo2
+Password: password
+
 
 ## Screenshots
 ### Home
