@@ -118,15 +118,31 @@ Review
 ## How to Run the Application
 
 ### Setup
-bundle install
-bin/rails db:migrate
-bin/rails db:seed
-bin/rails server
+- bundle install
+- bin/rails db:migrate
+- bin/rails db:seed
+- bin/rails server
 
 Open [http://localhost:3000](http://localhost:3000) in the browser
 
 
 ## Screenshots
+### Home
+<img width="1419" height="688" alt="Screenshot 2026-06-12 at 6 57 09 PM" src="https://github.com/user-attachments/assets/a92fe403-b300-455d-a5fc-fa42ada18c89" />
+
+### Product
+<img width="1292" height="706" alt="Screenshot 2026-06-12 at 6 58 06 PM" src="https://github.com/user-attachments/assets/186406a7-b6d5-4af2-99fc-a7a2babeb2eb" />
+
+### Review
+<img width="485" height="438" alt="Screenshot 2026-06-12 at 6 58 30 PM" src="https://github.com/user-attachments/assets/7066faf1-622b-4273-8e39-048a17b1cf07" />
+
+### Orders
+<img width="1422" height="487" alt="Screenshot 2026-06-12 at 6 58 54 PM" src="https://github.com/user-attachments/assets/3397e1ab-be42-4f73-882c-07f34ed7acbd" />
+
+### LogIn
+<img width="759" height="431" alt="Screenshot 2026-06-12 at 6 59 15 PM" src="https://github.com/user-attachments/assets/a8920d9b-8189-416e-8a2e-7d8f919caa06" />
+
+
 
 
 ## Known Limitations
